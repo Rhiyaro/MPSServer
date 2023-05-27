@@ -5,18 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5453df79-5eab-47fe-ada8-ced893980859" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/domain/Channel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/domain/MPSUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/domain/Measure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/domain/Panel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/domain/PanelModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/domain/Park.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/repo/UserRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/api/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/api/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/api/MascaraController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/api/ModeloMascaraController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/api/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/api/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/config/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/config/MascaraConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/domain/Cargo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/domain/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/domain/CredencialUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/domain/UserCredential.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/domain/Mascara.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/domain/ModeloMascara.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/domain/Usuario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/repo/CargoRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/repo/RoleRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/repo/CredencialRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/repo/CredentialRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/repo/MascaraRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/repo/ModeloMascaraRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/repo/UsuarioRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/service/MascaraService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/service/MascaraServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/service/ModeloMascaraService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/service/ModeloMascaraServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/service/UsuarioService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/service/UsuarioServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +48,13 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,11 +68,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projetos/MPSServer&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="Run" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

@@ -1,31 +1,20 @@
 package com.mps.MPSServer.api;
 
-import com.mps.MPSServer.domain.CredencialUsuario;
-import com.mps.MPSServer.dto.AuthenticationRequest;
-import com.mps.MPSServer.dto.AuthenticationResponse;
-import com.mps.MPSServer.CustomExceptions.ObjectAlreadyInDB;
-import com.mps.MPSServer.domain.Usuario;
 import com.mps.MPSServer.security.JwtUtil;
-import com.mps.MPSServer.service.UsuarioServiceImpl;
+import com.mps.MPSServer.service.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 
 @RestController
 @RequestMapping(path = "/api/auth")
 @RequiredArgsConstructor
 public class AuthenticationController {
     private final AuthenticationManager authenticationManager;
-    private final UsuarioServiceImpl usuarioService;
+    private final UserServiceImpl usuarioService;
     private final JwtUtil jwtUtil;
 
-    @PostMapping("v2/login")
+    /*@PostMapping("v2/login")
     public ResponseEntity<AuthenticationResponse> loginUsuario(@RequestBody AuthenticationRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getLogin(), request.getPassword()));
@@ -68,8 +57,8 @@ public class AuthenticationController {
                                                   @RequestParam String localTrabalho) {
 
         try {
-            Usuario usuario = new Usuario(nome, cpf, endereco, cidade, estado, telefone, localTrabalho);
-            CredencialUsuario credencialUsuario = new CredencialUsuario(usuario, login, senha, new ArrayList<>());
+            MPSUser usuario = new MPSUser(nome, cpf, endereco, cidade, estado, telefone, localTrabalho);
+            UserCredential credencialUsuario = new UserCredential(usuario, login, senha, new ArrayList<>());
 
             usuarioService.registerNewCredencialUsuario(credencialUsuario);
 
@@ -79,5 +68,5 @@ public class AuthenticationController {
 
         return ResponseEntity.ok("Registrado com sucesso");
 
-    }
+    }*/
 }

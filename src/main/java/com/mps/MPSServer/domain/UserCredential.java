@@ -17,63 +17,63 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CredencialUsuario implements UserDetails {
+public class UserCredential implements UserDetails {
     @Id
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
-    private Long idCredencial;
+    private Long credentialId;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST})
-    @JoinColumn(name = "idUsuario", referencedColumnName = "idUsuario")
-    private Usuario usuario;
+    @JoinColumn(name = "userId", referencedColumnName = "userId")
+    private MPSUser MPSUser;
 
     @Column(columnDefinition = "varchar(32)")
     private String login;
 
     @Column(columnDefinition = "varchar(32)")
-    private String senha;
+    private String password;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE/*, CascadeType.PERSIST*/})
-//    @JoinColumn(name = "cargos", referencedColumnName = "idCargo")
+//    @JoinColumn(name = "roles", referencedColumnName = "idCargo")
 //    @JoinTable(
 //            name = "credenciais_cargos",
 //            joinColumns = {@JoinColumn(name = "idCredencial")},
 //            inverseJoinColumns = {@JoinColumn(name = "idCargo")})
-    private List<Cargo> cargos = new ArrayList<>();
+    private List<Role> roles = new ArrayList<>();
 
-    public CredencialUsuario(Usuario usuario, String login, String senha) {
-        this.usuario = usuario;
+    public UserCredential(MPSUser MPSUser, String login, String password) {
+        this.MPSUser = MPSUser;
         this.login = login;
-        this.senha = senha;
-        this.cargos.add(new Cargo("USUARIO"));
+        this.password = password;
+        this.roles.add(new Role("USER"));
     }
 
-    public CredencialUsuario(Usuario usuario, String login, String senha, String... cargos) {
-        this.usuario = usuario;
+    public UserCredential(MPSUser MPSUser, String login, String password, String... cargos) {
+        this.MPSUser = MPSUser;
         this.login = login;
-        this.senha = senha;
+        this.password = password;
 
-        List<Cargo> addCargos = new ArrayList<>();
+        List<Role> addRoles = new ArrayList<>();
         for (String nomeCargo : cargos) {
-            addCargos.add(new Cargo(nomeCargo));
+            addRoles.add(new Role(nomeCargo));
         }
-        this.cargos = addCargos;
+        this.roles = addRoles;
     }
 
-    public CredencialUsuario(Usuario usuario, String login, String senha, List<Cargo> cargos) {
-        this.usuario = usuario;
+    public UserCredential(MPSUser MPSUser, String login, String password, List<Role> roles) {
+        this.MPSUser = MPSUser;
         this.login = login;
-        this.senha = senha;
-        this.cargos = cargos;
+        this.password = password;
+        this.roles = roles;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<GrantedAuthority> authorities = new ArrayList<>();
 
-        for (Cargo cargo : this.cargos) {
-            authorities.add(new SimpleGrantedAuthority(cargo.getNome()));
+        for (Role role : this.roles) {
+            authorities.add(new SimpleGrantedAuthority(role.getName()));
         }
 
         return authorities;
@@ -81,7 +81,7 @@ public class CredencialUsuario implements UserDetails {
 
     @Override
     public String getPassword() {
-        return this.senha;
+        return this.password;
     }
 
     @Override

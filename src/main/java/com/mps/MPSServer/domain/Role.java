@@ -14,22 +14,22 @@ import java.util.List;
 @Table
 @NoArgsConstructor
 @AllArgsConstructor
-public class Cargo {
+public class Role {
     @Id
     @GeneratedValue(
             strategy = GenerationType.IDENTITY
     )
-    Long idCargo;
+    Long roleId;
 //    @Column(columnDefinition = "varchar(16)")
-    String nome;
+    String name;
 
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {CascadeType.MERGE/*, CascadeType.PERSIST*/},
-            mappedBy = "cargos")
+            mappedBy = "roles")
     @JsonIgnore
-    List<CredencialUsuario> credenciais = new ArrayList<>();
+    List<UserCredential> credentials = new ArrayList<>();
 
-    public Cargo(String nome) {
-        this.nome = nome;
+    public Role(String name) {
+        this.name = name;
     }
 }

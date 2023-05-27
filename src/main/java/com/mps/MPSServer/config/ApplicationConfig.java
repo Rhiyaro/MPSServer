@@ -1,6 +1,6 @@
 package com.mps.MPSServer.config;
 
-import com.mps.MPSServer.repo.CredencialRepo;
+import com.mps.MPSServer.repo.CredentialRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,12 +17,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @RequiredArgsConstructor
 public class ApplicationConfig {
 
-    private final CredencialRepo credencialRepo;
+    private final CredentialRepo credentialRepo;
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return login -> credencialRepo.findByLogin(login)
-                .orElseThrow(() -> new UsernameNotFoundException("Usuario nao encontrado"));
+        return login -> credentialRepo.findByLogin(login)
+                .orElseThrow(() -> new UsernameNotFoundException("MPSUser nao encontrado"));
     }
 
     @Bean

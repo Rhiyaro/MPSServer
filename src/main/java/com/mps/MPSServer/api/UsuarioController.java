@@ -1,8 +1,8 @@
 package com.mps.MPSServer.api;
 
 import com.mps.MPSServer.CustomExceptions.ObjectNotFoundInDBException;
-import com.mps.MPSServer.domain.Usuario;
-import com.mps.MPSServer.service.UsuarioServiceImpl;
+import com.mps.MPSServer.domain.MPSUser;
+import com.mps.MPSServer.service.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,48 +13,39 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class UsuarioController {
 
-    private final UsuarioServiceImpl usuarioService;
+    private final UserServiceImpl usuarioService;
 
     @PostMapping("v1/buscar-por-cpf")
-    public Usuario getUsuarioByCpf(@RequestParam String cpf) throws ObjectNotFoundInDBException {
-        return usuarioService.getUsuarioByCpf(cpf);
+    public MPSUser getUsuarioByCpf(@RequestParam String cpf) throws ObjectNotFoundInDBException {
+        return usuarioService.getUserByCpf(cpf);
     }
 
     @PostMapping("v1/buscar-por-login")
-    public Usuario getUsuarioByLogin(@RequestParam String login) {
-        return usuarioService.getUsuarioByLogin(login);
+    public MPSUser getUsuarioByLogin(@RequestParam String login) {
+        return usuarioService.getUserByLogin(login);
     }
 
     @PostMapping("v1/atualizar-usuario")
     public ResponseEntity<String> updateUsuario(@RequestParam String cpf,
                                                 @RequestParam String campo,
                                                 @RequestParam String valor) throws ObjectNotFoundInDBException {
-        Usuario usuario = usuarioService.getUsuarioByCpf(cpf);
+        MPSUser MPSUser = usuarioService.getUserByCpf(cpf);
 
         switch (campo.toLowerCase()) {
             case "nome":
-                usuario.setNome(valor);
-                break;
-            case "endereco":
-                usuario.setEndereco(valor);
-                break;
-            case "cidade":
-                usuario.setCidade(valor);
-                break;
-            case "estado":
-                usuario.setEstado(valor);
+                MPSUser.setName(valor);
                 break;
             case "telefone":
-                usuario.setTelefone(valor);
+                MPSUser.setPhone(valor);
                 break;
-            case "localtrabalho":
-                usuario.setLocalTrabalho(valor);
+            case "email":
+                MPSUser.setEmail(valor);
                 break;
             default:
                 return new ResponseEntity<>("Campo invalido", HttpStatus.BAD_REQUEST);
         }
-        usuarioService.saveUsuario(usuario);
+        usuarioService.saveUser(MPSUser);
 
-        return ResponseEntity.ok("Usuario atualizado com sucesso");
+        return ResponseEntity.ok("MPSUser atualizado com sucesso");
     }
 }
