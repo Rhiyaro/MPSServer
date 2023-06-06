@@ -118,16 +118,16 @@ public class UserServiceImpl implements UserService {
     public UserCredential registerNewUserCredential(UserCredential userCredential) throws ObjectAlreadyInDB {
         Optional<MPSUser> optionalUsuario = userRepo.findUserByCpf(userCredential.getMPSUser().getCpf());
         if (optionalUsuario.isPresent()) {
-            throw new ObjectAlreadyInDB("CPF ja registrado");
+            throw new ObjectAlreadyInDB("CPF already registered");
         }
 
         Optional<UserCredential> optionalCredencialUsuario = credentialRepo.findByLogin(userCredential.getLogin());
         if (optionalCredencialUsuario.isPresent()) {
-            throw new ObjectAlreadyInDB("login ja registrado");
+            throw new ObjectAlreadyInDB("login already registered");
         }
 
         if (userCredential.getRoles().isEmpty()) {
-            Role addRole = roleRepo.findByName("USUARIO");
+            Role addRole = roleRepo.findByName("USER");
             userCredential.getRoles().add(addRole);
         }
         return credentialRepo.save(userCredential);
