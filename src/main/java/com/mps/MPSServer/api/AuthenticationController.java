@@ -53,6 +53,22 @@ public class AuthenticationController {
 
     }
 
+    @GetMapping("v2/login")
+    public ResponseEntity<AuthenticationResponse> loginUsuarioGet(@RequestParam String login,
+                                                                  @RequestParam String senha) {
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(login, senha));
+
+        UserDetails userDetails = userService.getUserCredentialByLogin(login);
+
+        return ResponseEntity.ok(
+                AuthenticationResponse
+                        .builder()
+                        .token(jwtUtil.generateToken(userDetails))
+                        .build());
+
+    }
+
     @PostMapping("v1/cadastrar")
     public ResponseEntity<String> registerUsuario(@RequestParam String login,
                                                   @RequestParam String password,

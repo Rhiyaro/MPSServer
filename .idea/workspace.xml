@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5453df79-5eab-47fe-ada8-ced893980859" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/api/MeasureController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/repo/ChannelRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/repo/MeasureRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/repo/PanelRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/service/MeasureService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/api/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/api/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/repo/ParkRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mps/MPSServer/repo/ParkRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
