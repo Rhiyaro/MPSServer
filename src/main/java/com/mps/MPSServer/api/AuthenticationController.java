@@ -3,12 +3,15 @@ package com.mps.MPSServer.api;
 import com.mps.MPSServer.CustomExceptions.ObjectAlreadyInDB;
 import com.mps.MPSServer.domain.MPSUser;
 import com.mps.MPSServer.domain.UserCredential;
+import com.mps.MPSServer.dto.AuthenticationResponse;
 import com.mps.MPSServer.security.JwtUtil;
 import com.mps.MPSServer.service.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -32,7 +35,7 @@ public class AuthenticationController {
                         .token(jwtUtil.generateToken(userDetails))
                         .build());
 
-    }
+    }*/
 
     @PostMapping("v1/login")
     public ResponseEntity<AuthenticationResponse> loginUsuario(@RequestParam String login,
@@ -40,7 +43,7 @@ public class AuthenticationController {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(login, senha));
 
-        UserDetails userDetails = usuarioService.getCredencialUsuarioByLogin(login);
+        UserDetails userDetails = userService.getUserCredentialByLogin(login);
 
         return ResponseEntity.ok(
                 AuthenticationResponse
@@ -48,7 +51,7 @@ public class AuthenticationController {
                         .token(jwtUtil.generateToken(userDetails))
                         .build());
 
-    }*/
+    }
 
     @PostMapping("v1/cadastrar")
     public ResponseEntity<String> registerUsuario(@RequestParam String login,
