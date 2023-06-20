@@ -1,5 +1,6 @@
 package com.mps.MPSServer;
 
+import com.mps.MPSServer.MPSUtil.DatetimeManager;
 import com.mps.MPSServer.domain.MPSUser;
 import com.mps.MPSServer.domain.Role;
 import com.mps.MPSServer.domain.UserCredential;
@@ -19,6 +20,7 @@ import java.util.List;
 public class MPSServerApplication {
 
     public static void main(String[] args) {
+        DatetimeManager.initialize();
         SpringApplication.run(MPSServerApplication.class, args);
     }
 
